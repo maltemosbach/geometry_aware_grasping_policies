@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Efficient Representations of Object Geometry for Reinforcement Learning of Grasping Policies</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Efficient Representations of Object Geometry for Reinforcement Learning of Grasping Policies">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-md fixed-top navbar-light" style="background-color: #f8f9fa;">
+        <a class="navbar-brand" href="#">Geometry-aware Grasping Policies</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggle">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Abstract">Abstract</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Videos">Videos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <div class="container" style="padding-top: 80px; font-size: 20px">
+        <div align="center">
+            <h2 class="text-center" align="center">
+                Efficient Representations of Object Geometry for <br> Reinforcement Learning of Grasping Policies
+            </h2>
+            <h6>
+                <a href="https://maltemosbach.github.io/" target="_blank">Malte Mosbach</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+                <a href="https://www.ais.uni-bonn.de/behnke/" target="_blank">Sven Behnke</a><br>
+            </h6>
+            <small>Autonomous Intelligent Systems Group (AIS)</small> <br>
+            <small>University of Bonn</small>
+        </div>
+    </div><br>
+
+    <div class="container" style="padding-top: 10px; font-size: 20px">
+        <div align="center">
+            <div class="center">
+                <img class="img-responsive img-rounded" src="files/images/teaser.png" style="width:60%" alt="">
+            </div>
+        </div>
+    </div><br>
+
+    <div class="container">
+        <h4 id="Abstract" style="padding-top: 70px; margin-top: -80px; ">Abstract</h4>
+        <div style="text-align: justify">
+            Grasping objects of different shapes and sizes, which is a foundational, effortless skill for humans, remains a difficult problem in robotics. Although model-based approaches can predict stable grasp configurations for known object models, they struggle to generalize to novel objects and operate in a non-interactive open-loop manner. In this work, we present a reinforcement learning policy capable of grasping various geometrically distinct real-world objects by continuously controlling an anthropomorphic robotic hand. To this end, we explore several explicit representations of object geometry as policy observations. Moreover, we propose to inform the policy implicitly through signed distances and show that this provides a concise representation and is naturally suited to reduce the search space through a shaped reward component. Finally, we demonstrate that proposed framework is able to learn even in more challenging conditions, such as targeted grasping from a cluttered bin.        
+
+</div>
+    </div><br><br>
+
+    <div class="container">
+        <h4 id="Videos" style="padding-top: 30px; margin-top: -40px;">Videos</h4>
+        Videos show the explicit object representations the policy operates on during manipulation. The bounding box is represented via its center pose and extent. Superquadrics are defined by their pose, 3 size, and 2 shape parameters. The points visualized in the videos lie on the recovered superquadric. 
+        <div class="row">
+            <div class="col-md-12">
+                <ul>
+                    <table class="center">
+                        <tr style=font-size:15pt>
+                            <td style='text-align:center; vertical-align:middle' colspan="3">Center of mass</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/com_lemon.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/com_master_chef_can.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/com_sugar_box.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table class="center">
+                        <tr style=font-size:15pt>
+                            <td style='text-align:center; vertical-align:middle' colspan="3">Bounding box</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/bbox_lemon.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/bbox_master_chef_can.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/bbox_sugar_box.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table class="center">
+                        <tr style=font-size:15pt>
+                            <td style='text-align:center; vertical-align:middle' colspan="3">Superquadric</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/sq_lemon.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/sq_master_chef_can.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/sq_sugar_box.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table class="center">
+                        <tr style=font-size:15pt>
+                            <td style='text-align:center; vertical-align:middle' colspan="3">Point cloud</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/pc_lemon.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/pc_master_chef_can.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                            <td>
+                                <video width="340" class="center" controls>
+                                    <source src="files/videos/pc_sugar_box.mp4" type="video/mp4">
+                                </video>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                </ul>
+            </div>
+        </div>
+    </div><br><br><br>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
