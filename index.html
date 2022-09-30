@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Efficient Representations of Object Geometry for Reinforcement Learning of Grasping Policies</title>
+    <title>Efficient Representations of Object Geometry for Reinforcement Learning of Interactive Grasping Policies</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Efficient Representations of Object Geometry for Reinforcement Learning of Grasping Policies">
+    <meta name="description" content="Efficient Representations of Object Geometry for Reinforcement Learning of Interactive Grasping Policies">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -38,7 +38,7 @@
     <div class="container" style="padding-top: 80px; font-size: 20px">
         <div align="center">
             <h2 class="text-center" align="center">
-                Efficient Representations of Object Geometry for <br> Reinforcement Learning of Grasping Policies
+                Efficient Representations of Object Geometry for <br> Reinforcement Learning of Interactive Grasping Policies
             </h2>
             <h6>
                 <a href="https://maltemosbach.github.io/" target="_blank">Malte Mosbach</a> &nbsp;&nbsp;&nbsp;&nbsp; 
@@ -60,8 +60,7 @@
     <div class="container">
         <h4 id="Abstract" style="padding-top: 70px; margin-top: -80px; ">Abstract</h4>
         <div style="text-align: justify">
-            Grasping objects of different shapes and sizes, which is a foundational, effortless skill for humans, remains a difficult problem in robotics. Although model-based approaches can predict stable grasp configurations for known object models, they struggle to generalize to novel objects and operate in a non-interactive open-loop manner. In this work, we present a reinforcement learning policy capable of grasping various geometrically distinct real-world objects by continuously controlling an anthropomorphic robotic hand. To this end, we explore several explicit representations of object geometry as policy observations. Moreover, we propose to inform the policy implicitly through signed distances and show that this provides a concise representation and is naturally suited to reduce the search space through a shaped reward component. Finally, we demonstrate that the proposed framework is able to learn even in more challenging conditions, such as targeted grasping from a cluttered bin.        
-
+Grasping objects of different shapes and sizes — a foundational, effortless skill for humans — remains a challenging task in robotics. Although model-based approaches can predict stable grasp configurations for known object models, they struggle to generalize to novel objects and often operate in a non-interactive open-loop manner. In this work, we present a reinforcement learning framework that learns the interactive grasping of various geometrically distinct real-world objects by continuously controlling an anthropomorphic robotic hand. We explore several explicit representations of object geometry as input to the policy. Moreover, we propose to inform the policy implicitly through signed distances and show that this provides a concise representation and is naturally suited to guide the search through a shaped reward component. Finally, we demonstrate that the proposed framework is able to learn even in more challenging conditions, such as targeted grasping from a cluttered bin. Necessary pre-grasping behaviors such as object reorientation and utilization of environmental constraints emerge in this case.
 </div>
     </div><br><br>
 
