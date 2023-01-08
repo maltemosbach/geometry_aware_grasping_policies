@@ -1,198 +1,178 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <title id="papertitle_website">papertitle_website</title>
+        <meta name="author" content="Malte Mosbach">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+    </head>
 
-<head>
-    <title>Efficient Representations of Object Geometry for Reinforcement Learning of Interactive Grasping Policies</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Efficient Representations of Object Geometry for Reinforcement Learning of Interactive Grasping Policies">
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-</head>
-
-
-<body>
-    <nav class="navbar navbar-expand-md fixed-top navbar-light" style="background-color: #f8f9fa;">
-        <a class="navbar-brand" href="#">Geometry-aware Grasping Policies</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarToggle">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#Abstract">Abstract</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#Videos">Videos</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <br>
-    <div class="container" style="padding-top: 80px; font-size: 20px">
-        <div align="center">
-            <h2 class="text-center" align="center">
-                Efficient Representations of Object Geometry for <br> Reinforcement Learning of Interactive Grasping Policies
-            </h2>
-            <h6>
-                <a href="https://maltemosbach.github.io/" target="_blank">Malte Mosbach</a> &nbsp;&nbsp;&nbsp;&nbsp; 
-                <a href="https://www.ais.uni-bonn.de/behnke/" target="_blank">Sven Behnke</a><br>
-            </h6>
-            <small>Autonomous Intelligent Systems Group (AIS)</small> <br>
-            <small>University of Bonn</small>
-        </div>
-    </div><br>
-
-    <div class="container" style="padding-top: 10px; font-size: 20px">
-        <div align="center">
-            <div class="center">
-                <img class="img-responsive img-rounded" src="files/images/teaser.png" style="width:60%" alt="">
+    <body>
+        <div class="title">
+            <br><br>
+            <h2 id="papertitle_heading" style=line-height:125%>papertitle_heading</h2>
+            <div class="authors">
+                <a href="https://maltemosbach.github.io/"><b>Malte Mosbach</b></a><sup>1</sup>, and 
+                <a href="https://www.ais.uni-bonn.de/behnke/"><b>Sven Behnke</b></a><sup>1</sup>
             </div>
+            <div class="affiliations">
+            <sup>1</sup>University of Bonn
+            </div>
+            <div class="title_links">
+                <span class="link_highlight"><a href="https://www.humanoids2022.org"><b>IRC 2022</b></a></span>&nbsp;&nbsp;
+                <span class="tag">
+                <a href="assets/bibtex.txt" class="link">[bibtex]</a>&nbsp;
+                <a href="https://arxiv.org/abs/2211.10957" class="link">[paper]</a>&nbsp;
+                </span>
+            </div>
+            <br>
         </div>
-    </div><br>
 
-    <div class="container">
-        <h4 id="Abstract" style="padding-top: 70px; margin-top: -80px; ">Abstract</h4>
-        <div style="text-align: justify">
-Grasping objects of different shapes and sizes — a foundational, effortless skill for humans — remains a challenging task in robotics. Although model-based approaches can predict stable grasp configurations for known object models, they struggle to generalize to novel objects and often operate in a non-interactive open-loop manner. In this work, we present a reinforcement learning framework that learns the interactive grasping of various geometrically distinct real-world objects by continuously controlling an anthropomorphic robotic hand. We explore several explicit representations of object geometry as input to the policy. Moreover, we propose to inform the policy implicitly through signed distances and show that this provides a concise representation and is naturally suited to guide the search through a shaped reward component. Finally, we demonstrate that the proposed framework is able to learn even in more challenging conditions, such as targeted grasping from a cluttered bin. Necessary pre-grasping behaviors such as object reorientation and utilization of environmental constraints emerge in this case.
-</div>
-    </div><br><br>
+        <div class="abstract">
+            <b>Abstract: </b> Grasping objects of different shapes and sizes - a foundational, effortless skill for humans - remains a challenging task in robotics. Although model-based approaches can predict stable grasp configurations for known object models, they struggle to generalize to novel objects and often operate in a non-interactive open-loop manner. In this work, we present a reinforcement learning framework that learns the interactive grasping of various geometrically distinct real-world objects by continuously controlling an anthropomorphic robotic hand. We explore several explicit representations of object geometry as input to the policy. Moreover, we propose to inform the policy implicitly through signed distances and show that this is naturally suited to guide the search through a shaped reward component. Finally, we demonstrate that the proposed framework is able to learn even in more challenging conditions, such as targeted grasping from a cluttered bin. Necessary pre-grasping behaviors such as object reorientation and utilization of environmental constraints emerge in this case.
+            <br><br>
+        </div>
 
-    <div class="container">
-        <h4 id="Videos" style="padding-top: 30px; margin-top: -40px;">Videos</h4>
-        <h5>Explicit Representations of Object Geometry</h5>
+        <h3>Explicit Representations of Object Geometry</h3>
         Videos show the explicit object representations the policy operates on during manipulation. The bounding box is represented via its center pose and extent. Superquadrics are defined by their pose, 3 size, and 2 shape parameters. The points visualized in the videos lie on the recovered superquadric. We reduce the framerate of the videos to make it easier to follow the agent's behavior, since the policy is optimized to solve the tasks as fast as possible.
-        <div class="row">
-            <div class="col-md-12">
-                <ul>
-                    <table class="center">
-                        <tr style=font-size:15pt>
-                            <td style='text-align:center; vertical-align:middle' colspan="3">Center of mass</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/com_lemon.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/com_master_chef_can.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/com_sugar_box.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <table class="center">
-                        <tr style=font-size:15pt>
-                            <td style='text-align:center; vertical-align:middle' colspan="3">Bounding box</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/bbox_lemon.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/bbox_master_chef_can.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/bbox_sugar_box.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <table class="center">
-                        <tr style=font-size:15pt>
-                            <td style='text-align:center; vertical-align:middle' colspan="3">Superquadric</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/sq_lemon.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/sq_master_chef_can.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/sq_sugar_box.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <table class="center">
-                        <tr style=font-size:15pt>
-                            <td style='text-align:center; vertical-align:middle' colspan="3">Point cloud</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/pc_lemon.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/pc_master_chef_can.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/pc_sugar_box.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <h5>Bin Picking</h5>
-                    The rollouts below show a trained policy that picks a target object from clutter and highlight the main challenges of <b>object interaction</b>, strong <b>variation in object size</b>, and <b>difficult accessibility</b> of some positions in the deep bin. 
-                    <br>
-                    <table class="center">
-                        <tr style=font-size:15pt>
-                            <td style='text-align:center; vertical-align:middle' colspan="1">Pick red cup under object <br> interaction</td>
-                            <td style='text-align:center; vertical-align:middle' colspan="1">Pick large pitcher</td>
-                            <td style='text-align:center; vertical-align:middle' colspan="1">Continuous pre-grasp manipulation to <br>pick tomato soup can</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/pick_red_cup.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/pick_pitcher_base.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                            <td>
-                                <video width="340" class="center" controls>
-                                    <source src="files/videos/pick_tomato_soup_can.mp4" type="video/mp4">
-                                </video>
-                            </td>
-                        </tr>
-                    </table>
-                </ul>
+            <div align="center">
+                <table class="center">
+                    <tr style=font-size:15pt>
+                        <td style='text-align:center; vertical-align:middle' colspan="3">Center of mass</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/com_lemon.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/com_master_chef_can.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/com_sugar_box.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <table class="center">
+                    <tr style=font-size:15pt>
+                        <td style='text-align:center; vertical-align:middle' colspan="3">Bounding box</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/bbox_lemon.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/bbox_master_chef_can.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/bbox_sugar_box.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <table class="center">
+                    <tr style=font-size:15pt>
+                        <td style='text-align:center; vertical-align:middle' colspan="3">Superquadric</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/sq_lemon.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/sq_master_chef_can.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/sq_sugar_box.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <table class="center">
+                    <tr style=font-size:15pt>
+                        <td style='text-align:center; vertical-align:middle' colspan="3">Point cloud</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/pc_lemon.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/pc_master_chef_can.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/pc_sugar_box.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                    </tr>
+                </table>
             </div>
-        </div>
-    </div><br><br><br>
-</body>
+            <br>
+            <h3>Bin Picking</h3>
+            The rollouts below show a trained policy that picks a target object from clutter and highlight the main challenges of <b>object interaction</b>, strong <b>variation in object size</b>, and <b>difficult accessibility</b> of some positions in the deep bin. 
+            <br>
+            <div align="center">
+                <table class="center">
+                    <tr style=font-size:15pt>
+                        <td style='text-align:center; vertical-align:middle' colspan="1">Pick red cup under object <br> interaction</td>
+                        <td style='text-align:center; vertical-align:middle' colspan="1">Pick large pitcher</td>
+                        <td style='text-align:center; vertical-align:middle' colspan="1">Continuous pre-grasp manipulation to <br>pick tomato soup can</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/pick_red_cup.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/pick_pitcher_base.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                        <td>
+                            <video width="310" class="center" controls>
+                                <source src="files/videos/pick_tomato_soup_can.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <br><br>
+
+        <!--Footer.-->
+        <br><br><br>
+        <p style="text-align:left;">
+            <a href="https://www.uni-bonn.de/en/imprint" class="link">Imprint</a>&nbsp;
+            <a href="https://www.uni-bonn.de/en/data-protection-policy" class="link">Data Protection Policy</a>&nbsp;
+            <span style="float:right;">
+                <a href="https://github.com/maltemosbach"><img src=assets/images/github-mark.svg height=24 style="position: relative; top: 4px;"></a>&nbsp;&nbsp;&nbsp;
+                <a href="https://scholar.google.de/citations?user=OQv4g3kAAAAJ&hl=de&oi=ao"><img src=https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg height=24 style="position: relative; top: 4px;"></a>&nbsp;&nbsp;&nbsp;
+                <a href="https://de.linkedin.com/in/mosbach"><img src=assets/images/LI-IN-Bug.png height=24 style="position: relative; top: 4px;"></a>
+            </span>
+        </p>
+
+        <script src="assets/js/script.js"></script>
+    </body>
+
 </html>
